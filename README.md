@@ -20,7 +20,7 @@ The project also covers Linux storage management by formatting, mounting, and co
 
 # 🏗 Architecture
 
-> *(Add your architecture diagram here later.)*
+
 
 ```text
                     Internet
@@ -78,42 +78,6 @@ The project also covers Linux storage management by formatting, mounting, and co
 
 ---
 
-# 📂 Project Structure
-
-```text
-secure-aws-web-server-deployment/
-│
-├── README.md
-├── architecture/
-│   └── architecture-diagram.png
-│
-├── screenshots/
-│   ├── 01-iam-user.png
-│   ├── 02-ec2-instance.png
-│   ├── 03-security-group.png
-│   ├── 04-ssh-login.png
-│   ├── 05-apache-installed.png
-│   ├── 06-website-running.png
-│   ├── 07-ebs-attached.png
-│   ├── 08-lsblk-output.png
-│   ├── 09-mounted-volume.png
-│   └── 10-persistent-mount.png
-│
-├── commands/
-│   └── linux-commands.md
-│
-├── notes/
-│   ├── project-overview.md
-│   ├── aws-services-used.md
-│   ├── linux-concepts.md
-│   ├── interview-questions.md
-│   └── troubleshooting.md
-│
-└── website/
-    └── index.html
-```
-
----
 
 # 🚀 Step-by-Step Implementation
 
@@ -211,22 +175,7 @@ nano
 
 ---
 
-# 📸 Screenshots
 
-| Screenshot | Description |
-|------------|-------------|
-| IAM User | IAM configuration |
-| EC2 Instance | Instance creation |
-| Security Groups | Inbound Rules |
-| SSH Login | Successful connection |
-| Apache Running | Apache service status |
-| Website | Hosted web page |
-| EBS Volume | Attached volume |
-| lsblk | Block devices |
-| Mounted Volume | Mounted EBS |
-| Persistent Mount | Verification after reboot |
-
----
 
 # 🧠 Key Concepts Learned
 
