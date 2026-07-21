@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AWS Cloud Project</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI,Tahoma,Geneva,Verdana,sans-serif;
+}
+
+body{
+background:#0f172a;
+color:white;
+}
+
+header{
+background:#1e3a8a;
+padding:25px;
+text-align:center;
+box-shadow:0 4px 15px rgba(0,0,0,.3);
+}
+
+header h1{
+font-size:40px;
+}
+
+header p{
+margin-top:10px;
+color:#dbeafe;
+}
+
+.container{
+width:90%;
+max-width:1100px;
+margin:40px auto;
+}
+
+.card{
+background:#1e293b;
+padding:25px;
+margin-bottom:25px;
+border-radius:12px;
+border-left:6px solid #3b82f6;
+box-shadow:0 5px 15px rgba(0,0,0,.25);
+}
+
+.card h2{
+margin-bottom:15px;
+color:#60a5fa;
+}
+
+.card p{
+line-height:1.8;
+color:#e2e8f0;
+}
+
+.architecture{
+background:#111827;
+padding:20px;
+border-radius:10px;
+font-family:monospace;
+font-size:18px;
+line-height:2;
+white-space:pre;
+overflow:auto;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:15px;
+}
+
+th{
+background:#2563eb;
+padding:15px;
+}
+
+td{
+padding:15px;
+background:#1e293b;
+border:1px solid #334155;
+}
+
+footer{
+background:#1e3a8a;
+text-align:center;
+padding:20px;
+margin-top:40px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Secure AWS Web Server Deployment</h1>
+
+<p>Amazon EC2 | Apache HTTP Server | Amazon EBS | Red Hat Linux</p>
+
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<h2>Project Description</h2>
+
+<p>
+
+This project demonstrates how to deploy a secure Apache web server on an Amazon EC2
+instance running Red Hat Enterprise Linux. Amazon EBS is attached as additional
+persistent storage, while Security Groups control network access.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Architecture</h2>
+
+<div class="architecture">
+
+Internet
+    │
+Public IP
+    │
+Security Group
+    │
+Amazon EC2
+    │
+Apache HTTP Server
+    │
+Root EBS
+    │
+Amazon EBS (/data)
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Project Details</h2>
+
+<table>
+
+<tr>
+<th>Component</th>
+<th>Used</th>
+</tr>
+
+<tr>
+<td>Cloud Provider</td>
+<td>AWS</td>
+</tr>
+
+<tr>
+<td>Compute</td>
+<td>Amazon EC2</td>
+</tr>
+
+<tr>
+<td>Operating System</td>
+<td>Red Hat Enterprise Linux</td>
+</tr>
+
+<tr>
+<td>Storage</td>
+<td>Amazon EBS</td>
+</tr>
+
+<tr>
+<td>Web Server</td>
+<td>Apache HTTP Server</td>
+</tr>
+
+<tr>
+<td>Security</td>
+<td>Security Group + SSH Key Pair</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+<footer>
+
+Created by Sakshi Sawant
+
+</footer>
+
+</body>
+</html>
