@@ -219,6 +219,53 @@ aws s3 ls
 
 ---
 
+# 🔐 SSH Commands Used
+
+### Connect to Bastion Host
+
+```bash
+ssh -i key.pem ec2-user@<Bastion-Public-IP>
+```
+
+### Copy Private Key to Bastion Host
+
+```bash
+scp -i key.pem key.pem ec2-user@<Bastion-Public-IP>:~
+```
+
+### Set Correct Permissions
+
+```bash
+chmod 400 key.pem
+```
+
+### Connect to Apache Web Server from Bastion
+
+```bash
+ssh -i key.pem ec2-user@<Web-Server-Private-IP>
+```
+
+### Connect to Private Application Server from Bastion
+
+```bash
+ssh -i key.pem ec2-user@<Private-App-Private-IP>
+```
+
+### SSH Connection Flow
+
+```text
+Laptop
+   │
+   ▼
+Bastion Host
+   │
+   ├──► Apache Web Server
+   │
+   └──► Private Application Server
+```
+
+---
+
 # 📸 Project Screenshots
 
 | Section | Status |
