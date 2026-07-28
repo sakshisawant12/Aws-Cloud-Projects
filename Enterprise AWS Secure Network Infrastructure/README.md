@@ -1,429 +1,303 @@
-# Enterprise AWS Secure Network Infrastructure
+# 🚀 Enterprise AWS Secure Network Infrastructure
 
-## 📌 Project Overview
+<p align="left">
 
-This project demonstrates the design and deployment of a secure enterprise AWS network infrastructure on Amazon Web Services (AWS). It focuses on implementing secure networking, private resource access, Linux administration, storage management, and inter-VPC communication using AWS best practices.
+![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white)
+![EC2](https://img.shields.io/badge/EC2-FF9900?style=for-the-badge)
+![VPC](https://img.shields.io/badge/VPC-3F48CC?style=for-the-badge)
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+![RHEL](https://img.shields.io/badge/RHEL-EE0000?style=for-the-badge&logo=redhat&logoColor=white)
+![Apache](https://img.shields.io/badge/Apache-CA2136?style=for-the-badge&logo=apache)
+![Amazon%20EBS-Storage-0A84FF?style=for-the-badge)
+![Amazon%20S3-Storage-569A31?style=for-the-badge)
+![Project-Completed-brightgreen?style=for-the-badge)
 
-The architecture consists of an Enterprise VPC with public and private subnets, a Bastion Host for secure SSH access, a private application server, Amazon EBS for persistent storage, Amazon S3 with a Gateway Endpoint for private S3 access, and VPC Peering to securely connect multiple VPCs.
+</p>
 
-This project provides hands-on experience with core AWS networking services and security concepts required for Cloud Engineer and Cloud Support Engineer roles.
+A hands-on AWS Cloud project demonstrating the design, deployment, and security of an enterprise network infrastructure using **Amazon VPC, EC2, IAM, Security Groups, Network ACLs, Bastion Host, NAT Gateway, Amazon EBS, Amazon S3 Gateway Endpoint, and VPC Peering**.
+
+---
+
+# 📖 Project Overview
+
+This project focuses on building a secure AWS infrastructure following enterprise networking best practices.
+
+The environment consists of:
+
+- Enterprise VPC
+- Public & Private Subnets
+- Bastion Host
+- Apache Web Server
+- Private Application Server
+- NAT Gateway
+- Amazon EBS
+- Amazon S3 Gateway Endpoint
+- IAM Role
+- VPC Peering
+
+The project demonstrates secure administration, private networking, persistent storage, and private AWS service connectivity.
 
 ---
 
 # 🏗️ Architecture
 
+> Replace this image with your architecture diagram.
+
 ```text
-                                    Internet
-                                        │
-                                Internet Gateway
-                                        │
-                          ┌─────────────┴─────────────┐
-                          │                           │
-                    Public Subnet               Private Subnet
-                          │                           │
-                    Bastion Host              Private App Server
-                          │                           │
-                          │                     Amazon EBS Volume
-                          │                           │
-                          │                    S3 Gateway Endpoint
-                          │                           │
-                          └──────────────► Amazon S3 ◄──────────────┘
+Internet
+    │
+Internet Gateway
+    │
+──────── Public Subnet ────────
+│  Bastion Host              │
+│  Apache Web Server         │
+│  NAT Gateway               │
+──────────────────────────────
+             │
+             ▼
+──────── Private Subnet ──────
+│ Private Application Server │
+│ Amazon EBS                 │
+──────────────────────────────
+             │
+     IAM Role + Gateway Endpoint
+             │
+             ▼
+         Amazon S3
 
-                             Enterprise VPC
-                                    │
-                               VPC Peering
-                                    │
-                             Development VPC
-                                    │
-                             Development EC2
+Enterprise VPC
+       │
+       ▼
+VPC Peering
+       │
+       ▼
+Development VPC
 ```
 
 ---
 
-# ☁️ AWS Services Used
+# ✨ Features
 
-- AWS Identity and Access Management (IAM)
-- Amazon Virtual Private Cloud (VPC)
+- Enterprise VPC Architecture
 - Public & Private Subnets
-- Internet Gateway
-- NAT Gateway
-- Elastic IP
-- Route Tables
-- Security Groups
-- Network ACLs (NACL)
-- Amazon EC2
-- Amazon EBS
-- Amazon S3
-- Amazon S3 Gateway Endpoint
-- VPC Peering
-- AWS CLI
-- Linux (Amazon Linux)
-- Apache HTTP Server
-
----
-
-# 🚀 Project Features
-
-- Designed a secure enterprise AWS network infrastructure.
-- Implemented public and private subnet architecture.
-- Configured Internet Gateway for internet connectivity.
-- Configured NAT Gateway for secure outbound internet access from private subnet.
-- Configured Route Tables for network routing.
-- Implemented Security Groups and Network ACLs for traffic control.
-- Deployed Bastion Host for secure SSH access.
-- Launched private EC2 application server.
-- Attached and mounted Amazon EBS storage.
-- Configured Amazon S3 Gateway Endpoint for private S3 access.
-- Established secure communication between Enterprise and Development VPCs using VPC Peering.
-- Installed and configured Apache HTTP Server.
-- Performed Linux server administration.
-- Managed AWS resources using AWS CLI.
-
----
-
-# 📂 Project Components
-
-## IAM
-
-- IAM Users
-- IAM Groups
-- IAM Policies
-- Least Privilege Access
-
----
-
-## Networking
-
-- Enterprise VPC
-- Development VPC
-- CIDR Planning
-- Public Subnet
-- Private Subnet
-- Internet Gateway
-- NAT Gateway
-- Route Tables
+- Bastion Host Administration
+- Apache Web Server Deployment
+- Secure SSH Connectivity
 - Security Groups
 - Network ACLs
-- Elastic IP
+- NAT Gateway
+- Amazon EBS Persistent Storage
+- IAM Role Authentication
+- Private Amazon S3 Access
+- Gateway VPC Endpoint
 - VPC Peering
+- Linux Administration
+- Network Troubleshooting
 
 ---
 
-## Compute
+# 🛠️ AWS Services Used
 
-- Amazon EC2
-- Bastion Host
-- Private Application Server
-- Apache Web Server
-
----
-
-## Storage
-
-- Amazon EBS
-- Volume Attachment
-- File System Creation
-- Persistent Mount using `/etc/fstab`
-
----
-
-## Object Storage
-
-- Amazon S3
-- Bucket Versioning
-- Bucket Encryption
-- Lifecycle Management
-- S3 Gateway Endpoint
+| Service | Purpose |
+|----------|---------|
+| Amazon VPC | Virtual Network |
+| EC2 | Compute |
+| IAM | Identity & Access |
+| Security Groups | Instance Firewall |
+| Network ACL | Subnet Firewall |
+| Internet Gateway | Internet Access |
+| NAT Gateway | Private Internet Access |
+| Route Tables | Traffic Routing |
+| Amazon EBS | Persistent Storage |
+| Amazon S3 | Object Storage |
+| Gateway Endpoint | Private S3 Access |
+| VPC Peering | Private VPC Communication |
 
 ---
 
-# ⚙️ Deployment Steps
+# 📂 Repository Structure
 
-## Step 1
-
-Created IAM users, groups, and policies following the principle of least privilege.
-
----
-
-## Step 2
-
-Created Enterprise VPC with custom CIDR block.
-
----
-
-## Step 3
-
-Created:
-
-- Public Subnet
-- Private Subnet
-
----
-
-## Step 4
-
-Configured:
-
-- Internet Gateway
-- Route Tables
-
----
-
-## Step 5
-
-Created NAT Gateway and associated Elastic IP.
-
----
-
-## Step 6
-
-Configured:
-
-- Security Groups
-- Network ACLs
-
----
-
-## Step 7
-
-Launched Bastion Host in the Public Subnet.
-
----
-
-## Step 8
-
-Launched Private EC2 Instance inside the Private Subnet.
-
----
-
-## Step 9
-
-Connected securely using SSH through Bastion Host.
-
-```bash
-ssh -i key.pem ec2-user@<Bastion-Public-IP>
-
-ssh -i key.pem ec2-user@<Private-IP>
+```
+Enterprise-AWS-Secure-Network-Infrastructure
+│
+├── Architecture/
+├── Commands/
+├── Documentation/
+├── Images/
+├── Screenshots/
+├── README.md
+└── LICENSE
 ```
 
 ---
 
-## Step 10
+# 🚀 Deployment Workflow
 
-Configured Apache Web Server.
-
-```bash
-sudo yum update -y
-sudo yum install httpd -y
-
-sudo systemctl enable httpd
-sudo systemctl start httpd
+```
+Create Enterprise VPC
+        ↓
+Create Public & Private Subnets
+        ↓
+Attach Internet Gateway
+        ↓
+Configure Route Tables
+        ↓
+Create Security Groups
+        ↓
+Configure Network ACLs
+        ↓
+Launch Bastion Host
+        ↓
+Launch Apache Web Server
+        ↓
+Configure NAT Gateway
+        ↓
+Launch Private EC2
+        ↓
+Attach Amazon EBS
+        ↓
+Configure Gateway Endpoint
+        ↓
+Attach IAM Role
+        ↓
+Create Development VPC
+        ↓
+Configure VPC Peering
+        ↓
+Verify Connectivity
 ```
 
 ---
 
-## Step 11
+# 🔒 Security Highlights
 
-Created Amazon EBS Volume.
-
-Attached the volume.
-
-Verified:
-
-```bash
-lsblk
-```
-
-Formatted:
-
-```bash
-sudo mkfs -t xfs /dev/xvdf
-```
-
-Mounted:
-
-```bash
-sudo mount /dev/xvdf /data
-```
-
-Persistent Mount:
-
-```bash
-sudo blkid
-
-sudo nano /etc/fstab
-```
-
-Verified:
-
-```bash
-df -h
-```
-
----
-
-## Step 12
-
-Created Amazon S3 Bucket.
-
-Configured:
-
-- Versioning
-- Encryption
-- Lifecycle Rule
-
----
-
-## Step 13
-
-Configured Amazon S3 Gateway Endpoint.
-
-Verified private access to S3.
-
----
-
-## Step 14
-
-Created Development VPC.
-
-Configured VPC Peering.
-
-Updated Route Tables.
-
-Verified successful connectivity.
+- Bastion Host for secure administration
+- Private EC2 without Public IP
+- Security Groups for instance-level protection
+- Network ACLs for subnet-level filtering
+- IAM Role for secure S3 access
+- Gateway VPC Endpoint for private S3 connectivity
+- NAT Gateway for outbound internet access
+- VPC Peering for private inter-VPC communication
 
 ---
 
 # 💻 Linux Commands Used
 
 ```bash
-hostname
-
-hostname -I
-
-pwd
-
-ls
-
-lsblk
-
-df -h
-
-mount
-
-blkid
-
-mkdir
-
-cd
-
-chmod
-
-chown
-
-yum update
-
-yum install httpd
-
-systemctl status httpd
-
-systemctl enable httpd
-
+yum update -y
+yum install httpd -y
 systemctl start httpd
-
+systemctl enable httpd
+lsblk
+mkfs.xfs
+mount
+blkid
+mount -a
+chmod 400 key.pem
 ssh
-
+scp
 ping
-
-curl
 ```
 
 ---
 
-# 🔒 Security Implementation
+# ☁️ AWS CLI Commands
 
-- IAM Least Privilege
-- Private Subnet Isolation
-- Bastion Host Architecture
-- Security Groups
-- Network ACLs
-- Private S3 Access using Gateway Endpoint
-- Controlled SSH Access
-- Persistent Storage Encryption Support
-
----
-
-# 🌐 Networking Concepts Demonstrated
-
-- CIDR Blocks
-- Public vs Private Subnets
-- Internet Gateway
-- NAT Gateway
-- Elastic IP
-- Route Tables
-- Security Groups
-- Network ACLs
-- Bastion Host
-- SSH
-- VPC Peering
-- Amazon S3 Gateway Endpoint
+```bash
+aws configure
+aws sts get-caller-identity
+aws ec2 describe-instances
+aws ec2 describe-vpcs
+aws ec2 describe-subnets
+aws ec2 describe-route-tables
+aws ec2 describe-security-groups
+aws ec2 describe-vpc-endpoints
+aws ec2 describe-vpc-peering-connections
+aws s3 ls
+```
 
 ---
 
+# 📸 Project Screenshots
 
+| Section | Status |
+|---------|--------|
+| IAM | ✅ |
+| Enterprise VPC | ✅ |
+| Public & Private Subnets | ✅ |
+| Internet Gateway | ✅ |
+| Route Tables | ✅ |
+| Security Groups | ✅ |
+| Network ACLs | ✅ |
+| Bastion Host | ✅ |
+| Apache Web Server | ✅ |
+| NAT Gateway | ✅ |
+| Private EC2 | ✅ |
+| Amazon EBS | ✅ |
+| Amazon S3 | ✅ |
+| Gateway Endpoint | ✅ |
+| VPC Peering | ✅ |
 
-# 🧠 Key Learning Outcomes
-
-- Designed a secure enterprise AWS network architecture.
-- Implemented secure networking using AWS VPC.
-- Managed compute resources using Amazon EC2.
-- Configured persistent storage with Amazon EBS.
-- Implemented secure S3 access using Gateway Endpoints.
-- Configured secure SSH access using a Bastion Host.
-- Established secure communication between VPCs using VPC Peering.
-- Strengthened Linux administration and AWS CLI skills.
-- Gained hands-on experience with AWS networking and security best practices.
-
----
-
-# 🚀 Future Enhancements
-
-- Application Load Balancer (ALB)
-- Auto Scaling Group
-- Amazon Route 53
-- Amazon RDS
-- Amazon CloudWatch Monitoring
-- Infrastructure as Code (Terraform)
-- CI/CD Integration
-- Multi-AZ High Availability Architecture
+> Screenshots are available in the `Screenshots/` directory.
 
 ---
 
-# 📚 Skills Demonstrated
+# 📚 Documentation
+
+| Document |
+|----------|
+| Project Overview |
+| Deployment Steps |
+| Networking Concepts |
+| Security Implementation |
+| Linux Commands |
+| AWS CLI Commands |
+| Troubleshooting |
+| Learning Outcomes |
+
+Detailed documentation is available in the **Documentation/** folder.
+
+---
+
+# 🎯 Skills Demonstrated
 
 - AWS Cloud
-- IAM
+- Amazon EC2
 - Amazon VPC
-- EC2
-- EBS
-- Amazon S3
-- VPC Peering
-- Security Groups
-- Network ACLs
-- Internet Gateway
-- NAT Gateway
-- AWS CLI
-- Linux Administration
+- IAM
+- Linux (RHEL)
 - Apache HTTP Server
 - Networking
+- Security Groups
+- Network ACLs
+- NAT Gateway
+- Amazon EBS
+- Amazon S3
+- Gateway VPC Endpoint
+- VPC Peering
+- SSH Administration
 - Cloud Security
-- Troubleshooting
+- Infrastructure Deployment
 
 ---
 
-## 👩‍💻 Author
+# 🚀 Future Improvements
 
-**Sakshi Santosh Sawant**
+- Application Load Balancer (ALB)
+- Auto Scaling Group (ASG)
+- Multi-AZ Deployment
+- CloudWatch Monitoring
+- CloudTrail Logging
+- AWS Systems Manager
+- Infrastructure as Code (Terraform / CloudFormation)
 
-GitHub: https://github.com/sakshisawant12
-LinkedIn: www.linkedin.com/in/sakshi-sawant-508792392
+---
+
+# 👩‍💻 Author
+
+**Sakshi Sawant**
+
+
+
+If you found this project helpful, consider giving it a ⭐ on GitHub!
