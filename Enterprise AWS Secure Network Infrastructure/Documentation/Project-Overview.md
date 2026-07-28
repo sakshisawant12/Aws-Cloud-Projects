@@ -140,20 +140,5 @@ These controls ensure that private resources remain inaccessible from the public
 
 ---
 
-# Repository Structure
 
-```
-Architecture/
-Documentation/
-Screenshots/
-Images/
-Commands/
-README.md
-```
-
----
-
-# Author
-
-**Sakshi Sawant**
 
