@@ -194,20 +194,7 @@ nano
 
 ---
 
-# 🎤 Interview Questions Covered
 
-- Why use IAM Users instead of the Root User?
-- What is Amazon EBS?
-- Difference between Root Volume and Additional EBS Volume?
-- What is UUID?
-- Why use UUID in `/etc/fstab`?
-- Difference between `lsblk` and `df -h`?
-- Why do we format a new EBS volume?
-- Why use XFS?
-- What is a mount point?
-- Why configure persistent storage?
-
----
 
 # 🎯 Learning Outcomes
 
