@@ -8,9 +8,11 @@
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 ![RHEL](https://img.shields.io/badge/RHEL-EE0000?style=for-the-badge&logo=redhat&logoColor=white)
 ![Apache](https://img.shields.io/badge/Apache-CA2136?style=for-the-badge&logo=apache)
-![Amazon%20EBS-Storage-0A84FF?style=for-the-badge)
-![Amazon%20S3-Storage-569A31?style=for-the-badge)
-![Project-Completed-brightgreen?style=for-the-badge)
+![Amazon EBS](https://img.shields.io/badge/Amazon_EBS-0A84FF?style=for-the-badge&logo=amazonaws&logoColor=white)
+
+![Amazon S3](https://img.shields.io/badge/Amazon_S3-569A31?style=for-the-badge&logo=amazons3&logoColor=white)
+
+![Project](https://img.shields.io/badge/Project-Completed-brightgreen?style=for-the-badge)
 
 </p>
 
