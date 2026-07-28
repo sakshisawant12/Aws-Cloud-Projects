@@ -425,7 +425,5 @@ curl
 
 **Sakshi Santosh Sawant**
 
-Cloud Computing Enthusiast | AWS | Linux | Networking
-
 GitHub: https://github.com/sakshisawant12
-LinkedIn: *(Add your LinkedIn profile here)*
+LinkedIn: www.linkedin.com/in/sakshi-sawant-508792392
